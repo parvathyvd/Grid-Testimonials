@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+--Moderate-violet: hsl(263, 55%, 52%);
+--Very-dark-grayish-blue: hsl(217, 19%, 35%);
+--Very-dark-blackish-blue: hsl(219, 29%, 14%);
+--White: hsl(0, 0%, 100%);
+--Light-gray: hsl(0, 0%, 81%);
+--Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+html{
+    max-width: 140rem;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+
+body{ 
+    width: 100%;
+    height: 100%;
+    background: var(--Light-grayish-blue);
+    font-size: 62.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 1.3rem;
+}
+.testimonials{
+    margin: 1rem;
+    max-width: 60rem;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "mainitem mainitem half tall"
+                         "tiny secondmain secondmain tall" ;
+    grid-template-columns: repeat(4, minmax(15rem, 1fr)); 
+    gap: 1rem;
+                         
+}
+
+.mainitem{
+    grid-area: mainitem;
+    background: url(./images/bg-pattern-quotation.svg) no-repeat top right 15% ,var(--Moderate-violet);
+    border-radius: 10px;
+    padding: 2rem;
+    color: var(--White);
+}
+
+.half{
+    grid-area: half;
+    background: var(--Very-dark-grayish-blue);
+    border-radius: 10px;
+    padding: 2rem;
+    color: var(--White);
+}
+
+.tall{
+    grid-area: tall;
+
+}
+.tall .description, .tiny .description{
+    color: var(--Very-dark-grayish-blue);
+    line-height: 1rem;
+}
+.tall, .tiny{
+    background: var(--White);
+    border-radius: 10px;
+    padding: 2rem;
+    color: var(--Very-dark-grayish-blue);
+}
+.tiny{
+    grid-area: tiny;
+  
+}
+
+.secondmain{
+    grid-area: secondmain;
+    background: var(--Very-dark-blackish-blue);
+    border-radius: 10px;
+    padding: 2rem;
+    color: var(--Light-grayish-blue);
+}
+
+.secondmain .description{
+    color: var(--Light-grayish-blue);
+}
+
+
+.profile{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.profile__info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+img{
+    width: 1.7rem;
+    border-radius: 50%;
+    border: 1px solid var(--Light-gray);
+    display: block;
+    align-self: center;
+}
+h5{
+    font-size: 0.7rem;
+    padding: 0;
+}
+small{
+    font-size: 0.6rem; 
+    opacity: 55%;
+}
+h3{
+    font-size: 1.2rem;
+    padding: 1rem 0
+}
+.description{
+    font-size: 0.7rem;
+    line-height: 1rem;
+    color: var(--Light-gray);
+    opacity: 55%;
+}
+
+@media screen and (max-width: 1080px) {
+    .testimonials{
+        display: grid;
+        grid-template-areas: "mainitem mainitem half"
+                              "tiny tall tall"
+                             "secondmain secondmain secondmain" ;
+        grid-template-columns: repeat(3, minmax(15rem, 1fr)); 
+       
+                             
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .testimonials{
+        display: grid;
+        grid-template-areas: "mainitem"
+                              "half"
+                              "tiny"
+                             "secondmain"
+                             "tall";
+    grid-template-columns: 1fr; 
+                
+    }
+}
+
+
+
+
+.attribution{
+    display: block;
+    width: 100%;
+    padding-top: 3rem;
+    left: 1rem;
+    position: fixed;
+    bottom: 0rem;
+    font-size: 0.7rem;
+    color: var(--Very-dark-blackish-blue);
+    text-decoration: none;
+}
